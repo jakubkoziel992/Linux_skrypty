@@ -1,0 +1,11 @@
+-- task 4
+
+!/bin/bash
+
+#This is my first task from course!
+
+SENTENCE="If cats could talk,they wouldn't"
+
+echo $SENTENCE
+
+exit 0
