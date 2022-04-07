@@ -10,3 +10,16 @@ echo $SENTENCE
 
 exit 0
 2
+
+--task 5
+#!/bin/bash
+INPUT_DIR=/tmp/ftp_data
+OUTPUT_DIR=/tmp/monitor_arch
+
+echo "Starting moving files from $INPUT_DIR to $OUTPUT_DIR"
+
+mv $INPUT_DIR/* $OUTPUT_DIR
+
+echo "done"
+
+exit 0
