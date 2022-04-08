@@ -23,3 +23,26 @@ mv $INPUT_DIR/* $OUTPUT_DIR
 echo "done"
 
 exit 0
+
+--task 7
+cat > config.sh
+export FILE_NAME=news.xml
+export WWW_ADDRESS=http://feeds.bbci.co.uk/news/world/rss.xml
+
+nano lab_7.sh
+
+#!/bin/bash
+
+source ./config.sh
+
+echo "Downloading $WWW_ADDRESS to $FILE_NAME"
+
+wget --quiet --output-document=$FILE_NAME $WWW_ADDRESS
+
+echo "Done"
+
+exit 0
+
+
+
+
