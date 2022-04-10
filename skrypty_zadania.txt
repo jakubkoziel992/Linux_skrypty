@@ -44,5 +44,37 @@ echo "Done"
 exit 0
 
 
+nano lab_8.sh
+
+#!/bin/bash
+
+FILE=356
+FREE_FILE_SYSTEM=220
+COMPRESSPERCENT=60
+
+NEW_FILE=$((FILE*COMPRESSPERCENT/100))
+
+
+echo $NEW_FILE
+
+echo $((NEW_FILE>FREE_FILE_SYSTEM))
+
+echo ==========================
+
+FILE=356
+FREE_FILE_SYSTEM=220
+COMPRESSPERCENT=60
+
+NEW_FILE=$(((FILE*COMPRESSPERCENT/100)+10))
+
+
+echo $NEW_FILE
+
+echo $((NEW_FILE>FREE_FILE_SYSTEM))
+
+exit 0
+
+
+
 
 
