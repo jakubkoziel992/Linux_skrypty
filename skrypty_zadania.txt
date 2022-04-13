@@ -74,6 +74,16 @@ echo $((NEW_FILE>FREE_FILE_SYSTEM))
 
 exit 0
 
+nano lab_10.sh
+#!/bin/bash
+
+date
+hostname
+who
+
+exit 0
+
+
 
 
 
