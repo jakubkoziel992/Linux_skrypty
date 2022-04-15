@@ -84,6 +84,24 @@ who
 exit 0
 
 
+=========================
+lab 13
+
+
+LIMIT=16
+AVERAGE=10
+PEAK=20
+USED=15
+
+[ $USED -lt $LIMIT ]
+[ $USED -ge $AVERAGE ]
+[ $USED -gt $PEAK ]
+[ $USED -lt $LIMIT -a $USED -gt $AVERAGE ]
+
+
+ [ -d $MEDIA ]
+[ -f $TMPLOC ]
+
 
 
 
