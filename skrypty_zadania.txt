@@ -102,6 +102,33 @@ USED=15
  [ -d $MEDIA ]
 [ -f $TMPLOC ]
 
+==========================
+lab_14 
+#!/bin/bash
+
+USER=mat
+GROUP=DEV
+FILE=/tmp/output.txt
+
+if [[ -z $USER || -z $GROUP ]] ; then
+        echo "USER and GROUP cannot be empty"
+        exit 11
+fi
+
+if [[ -f $FILE ]]; then
+        echo "Changing permissions to file"
+        sudo chown $USER:$GROUP $FILE
+elif [[ -d $FILE ]]; then
+        echo "Changing permissions to directory"
+        sudo chown -R $USER:$GROUP $FILE
+else
+        echo "The FILE is incorrect"
+        exit 12
+fi
+
+exit 0
+
+
 
 
 
