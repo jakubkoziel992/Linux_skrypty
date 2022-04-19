@@ -128,6 +128,10 @@ fi
 
 exit 0
 
+========================
+lab_16
+[ ! -d /tmp/workdir ] && mkdir /tmp/workdir [ -d /tmp/workdir ] || mkdir /tmp/workdir [ -f /tmp/stop.txt ] && echo "Cannot continue" && exit 1
+
 
 
 
