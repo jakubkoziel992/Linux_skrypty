@@ -158,5 +158,27 @@ done
 exit 0
 
 
+==========================
+
+#!/bin/bash 
+FILE=folders.txt 
+DIR=/tmp 
+for folder in $(cat $FILE); 
+do 
+CATALOG=$DIR/$folder 
+echo "Creating directory $CATALOG" 
+mkdir $CATALOG 
+done 
+exit 0 
+
+
+#!/bin/bash 
+FILEDU=./folders-du.txt 
+for folder in $(cat $FILEDU); 
+do 
+du -sh $folder 2> /dev/null 
+done
+
+
 
 
