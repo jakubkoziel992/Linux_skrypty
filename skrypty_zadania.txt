@@ -132,7 +132,30 @@ exit 0
 lab_16
 [ ! -d /tmp/workdir ] && mkdir /tmp/workdir [ -d /tmp/workdir ] || mkdir /tmp/workdir [ -f /tmp/stop.txt ] && echo "Cannot continue" && exit 1
 
+========================
+lab_18 
+#!/bin/bash 
+DIR=/var/log 
+for m in $DIR/*; do 
+	echo $m 
+done 
+exit 0
 
+
+#!/bin/bash 
+FILE=/etc/fstab 
+IFS='' 
+for line in $(cat $FILE); do 
+	echo "$line" 
+done 
+exit 0 
+
+
+#!/bin/bash
+for i in {1..10}; do 
+	echo "$i $(( $i * $i ))" 
+done 
+exit 0
 
 
 
