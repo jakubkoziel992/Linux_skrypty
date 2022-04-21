@@ -179,6 +179,27 @@ do
 du -sh $folder 2> /dev/null 
 done
 
+==============================
+lab_19.1
+
+#!/bin/bash
+
+START=1
+END=10
+
+while [[ $START -le $END ]]; do
+
+    echo -n '.'
+    sleep 1
+    START=$(($START + 1))
+
+done
+
+echo ' '
+
+exit 0
+
+
 
 
 
