@@ -132,6 +132,119 @@ exit 0
 lab_16
 [ ! -d /tmp/workdir ] && mkdir /tmp/workdir [ -d /tmp/workdir ] || mkdir /tmp/workdir [ -f /tmp/stop.txt ] && echo "Cannot continue" && exit 1
 
+========================
+lab_18 
+#!/bin/bash 
+DIR=/var/log 
+for m in $DIR/*; do 
+	echo $m 
+done 
+exit 0
+
+
+#!/bin/bash 
+FILE=/etc/fstab 
+IFS='' 
+for line in $(cat $FILE); do 
+	echo "$line" 
+done 
+exit 0 
+
+
+#!/bin/bash
+for i in {1..10}; do 
+	echo "$i $(( $i * $i ))" 
+done 
+exit 0
+
+
+==========================
+
+#!/bin/bash 
+FILE=folders.txt 
+DIR=/tmp 
+for folder in $(cat $FILE); 
+do 
+CATALOG=$DIR/$folder 
+echo "Creating directory $CATALOG" 
+mkdir $CATALOG 
+done 
+exit 0 
+
+
+#!/bin/bash 
+FILEDU=./folders-du.txt 
+for folder in $(cat $FILEDU); 
+do 
+du -sh $folder 2> /dev/null 
+done
+
+==============================
+lab_19.1
+
+#!/bin/bash
+
+START=1
+END=10
+
+while [[ $START -le $END ]]; do
+
+    echo -n '.'
+    sleep 1
+    START=$(($START + 1))
+
+done
+
+echo ' '
+
+exit 0
+
+
+lab_20
+
+#!/bin/bash
+
+USER="student01"
+
+while [[ -z $(who | grep $USER) ]]; do
+
+    echo -n '.'
+    sleep 1
+
+done
+    echo -e "\\07"
+    echo "$USER is on the system"
+
+exit 0
+
+lab_21
+
+weekdays=(Lunedi Martedi Mercoledi Giovani Venerdi) 
+echo ${weekdays[@]} Lunedi Martedi Mercoledi Giovani Venerdi 
+weekdays+=(Sabato Domenica) 
+echo ${weekdays[@]} Lunedi Martedi Mercoledi Giovani Venerdi Sabato Domenica 
+date +%w 5 
+today=$(date +%w) 
+echo $today 5 
+echo ${weekdays[$today]} Sabato 
+echo ${weekdays[@]:0:5} 
+Lunedi Martedi Mercoledi Giovani Venerdi
+
+lab_22
+#!/bin/bash
+
+USER=$(who | cut -d ' ' -f 1 | uniq)
+
+for u in $USER; do
+
+        count=$(ps --no-headers -u $u | wc -l)
+        echo "$u - $count"
+
+done
+
+exit 0
+
+
 
 
 
