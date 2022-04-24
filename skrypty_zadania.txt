@@ -230,6 +230,21 @@ echo ${weekdays[$today]} Sabato
 echo ${weekdays[@]:0:5} 
 Lunedi Martedi Mercoledi Giovani Venerdi
 
+lab_22
+#!/bin/bash
+
+USER=$(who | cut -d ' ' -f 1 | uniq)
+
+for u in $USER; do
+
+        count=$(ps --no-headers -u $u | wc -l)
+        echo "$u - $count"
+
+done
+
+exit 0
+
+
 
 
 
