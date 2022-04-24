@@ -217,6 +217,19 @@ done
 
 exit 0
 
+lab_21
+
+weekdays=(Lunedi Martedi Mercoledi Giovani Venerdi) 
+echo ${weekdays[@]} Lunedi Martedi Mercoledi Giovani Venerdi 
+weekdays+=(Sabato Domenica) 
+echo ${weekdays[@]} Lunedi Martedi Mercoledi Giovani Venerdi Sabato Domenica 
+date +%w 5 
+today=$(date +%w) 
+echo $today 5 
+echo ${weekdays[$today]} Sabato 
+echo ${weekdays[@]:0:5} 
+Lunedi Martedi Mercoledi Giovani Venerdi
+
 
 
 
