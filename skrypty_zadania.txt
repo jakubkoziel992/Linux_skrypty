@@ -200,6 +200,25 @@ echo ' '
 exit 0
 
 
+lab_20
+
+#!/bin/bash
+
+USER="student01"
+
+while [[ -z $(who | grep $USER) ]]; do
+
+    echo -n '.'
+    sleep 1
+
+done
+    echo -e "\\07"
+    echo "$USER is on the system"
+
+exit 0
+
+
+
 
 
 
