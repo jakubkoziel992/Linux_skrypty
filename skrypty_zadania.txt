@@ -245,6 +245,20 @@ done
 exit 0
 
 
+lab_23
+
+#!/bin/bash
+
+for folder in "$@"; do
+
+    du -sh "$folder" 2>/dev/null
+
+done
+
+exit 0
+
+
+
 
 
 
