@@ -373,6 +373,32 @@ if [[ $RUN_DU == 'Y' ]]; then
 fi
 exit 0
 
+==========================
+
+lab_26
+
+
+#!/bin/bash 
+function is_small() 
+{ DIR=/tmp/logs 
+SIZE_KB=$(du -s $DIR | cut -f 1) 
+if [[ $SIZE_KB -lt 1024 ]]; then 
+echo "Directory $DIR is still small $SIZE_KB KB" 
+return 0 
+else 
+echo "Directory $DIR is big ($SIZE_KB KB)" 
+return 1 
+fi } 
+
+MESSAGE=$(is_small) 
+IS_SMALL=$? 
+echo $IS_SMALL 
+if [[ $IS_SMALL -eq 0 ]]; then 
+echo "No action needed: $MESSAGE" 
+else 
+echo "ACTION NEEDED: $MESSAGE" 
+fi 
+exit 0
 
 
 
